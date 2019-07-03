@@ -1,11 +1,11 @@
 {
-  "name": "calcnormfactors",
-  "description": "calculate normal factors",
+  "name": "vsn",
+  "description": "perform vsn factors",
   "tags": ["normalization", "rnaseq"],
   "authors": ["tercen"],
-  "urls": ["https://github.com/tercen/calcnormfactors_operator"],
+  "urls": ["https://github.com/tercen/vsn_operator"],
   "properties": [
- 
+
   ]
 }
 

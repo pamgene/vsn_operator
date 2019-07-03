@@ -1,5 +1,5 @@
 library(tercen)
-library(dplyr)
+library(reshape2)
 library(vsn)
 
 ctx = tercenCtx()
