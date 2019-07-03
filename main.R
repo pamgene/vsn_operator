@@ -5,7 +5,7 @@ library(vsn)
 
 ctx = tercenCtx()
 
-data = tercen::select(ctx, .y, .ci, .ri )
+data = select(ctx, .y, .ci, .ri )
 data = reshape2::acast(data, .ri ~ .ci, value.var='.y', fun.aggregate=mean)
 data[is.nan( data )] <- NA
 norm_data <- justvsn(data)
