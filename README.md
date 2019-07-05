@@ -1,7 +1,7 @@
 # vsn operator
 
 #### Description
-`vsn` operator performs a normalization factor per column (i.e sample).
+`vsn` operator performs a normalization factor per column (i.e. sample).
 
 ##### Usage
 Input projection|.
@@ -13,10 +13,10 @@ Input projection|.
 
 Output relations|.
 ---|---
-`normfactor`| numeric, per column (i.e. per sample)
+`norm`| numeric, the normalized values of the measurements (i.e. of each sample)
 
 ##### Details
-The operator is from the VSN bioconductor.
+The operator is the `justvsn` function from the VSN bioconductor package.
 
 
 #### References
