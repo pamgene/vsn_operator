@@ -3,14 +3,19 @@ library(reshape2)
 library(dplyr)
 library(vsn)
 
+# connect to tercen
 ctx = tercenCtx()
 
+# get data from tercen
 data = select(ctx, .y, .ci, .ri )
 data = reshape2::acast(data, .ri ~ .ci, value.var='.y', fun.aggregate=mean)
+
+
+# perform vsn
 data[is.nan( data )] <- NA
 norm_data <- justvsn(data)
 
-
+# prepare the result
 output_df = data.frame(
   norm = as.vector(norm_data),
   .ci  = rep(0:(ncol(norm_data)-1), each=nrow(norm_data)),
