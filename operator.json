@@ -1,6 +1,6 @@
 {
-  "name": "vsn",
-  "description": "perform vsn factors",
+  "name": "VSN",
+  "description": "Variance Stabilisation and Normalisation: Removes the relation between the variance and magnitude of the measurement.",
   "tags": ["normalization", "rnaseq"],
   "authors": ["tercen"],
   "urls": ["https://github.com/tercen/vsn_operator"],
