@@ -3,10 +3,6 @@
   "description": "Variance Stabilisation and Normalisation: Removes the relation between the variance and magnitude of the measurement.",
   "tags": ["normalization", "rnaseq"],
   "authors": ["tercen"],
-  "urls": ["https://github.com/tercen/vsn_operator"],
-  "properties": [
-
-  ]
+  "urls": ["https://github.com/pamgene/vsn_operator"],
+  "properties": []
 }
-
-
