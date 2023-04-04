@@ -144,24 +144,13 @@
         "sys"
       ]
     },
-    "assertthat": {
-      "Package": "assertthat",
-      "Version": "0.2.1",
-      "Source": "Repository",
-      "Repository": "RSPM",
-      "Hash": "50c838a310445e954bc13f26f26a6ecf",
-      "Requirements": []
-    },
     "cli": {
       "Package": "cli",
-      "Version": "2.3.1",
+      "Version": "3.6.1",
       "Source": "Repository",
-      "Repository": "RSPM",
-      "Hash": "3e3f28efcadfda442cd18651fbcbbecf",
-      "Requirements": [
-        "assertthat",
-        "glue"
-      ]
+      "Repository": "CRAN",
+      "Hash": "89e6d8219950eac806ae0c489052048a",
+      "Requirements": []
     },
     "colorspace": {
       "Package": "colorspace",
