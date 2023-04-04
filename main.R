@@ -2,19 +2,15 @@ suppressPackageStartupMessages({
   library(tercen)
   library(dplyr)
   library(vsn)
-  library(reshape2)
 })
 
 # connect to tercen
 ctx = tercenCtx()
 
 # get data from tercen
-data = select(ctx, .y, .ci, .ri )
-data = reshape2::acast(data, .ri ~ .ci, value.var='.y', fun.aggregate=mean)
-
+data = ctx$as.matrix(fill = NA)
 
 # perform vsn
-data[is.nan( data )] <- NA
 norm_data <- justvsn(data)
 
 # prepare the result for tercen
