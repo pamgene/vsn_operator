@@ -2,21 +2,27 @@ suppressPackageStartupMessages({
   library(tercen)
   library(dplyr)
   library(vsn)
+  library(reshape2)
 })
 
+# connect to tercen
 ctx = tercenCtx()
 
-df <- ctx$as.matrix(fill = NA) %>%
-  justvsn() %>%
-  as_tibble()
+# get data from tercen
+data = select(ctx, .y, .ci, .ri )
+data = reshape2::acast(data, .ri ~ .ci, value.var='.y', fun.aggregate=mean)
 
-colnames(df) <- seq_len(ncol(df)) - 1L
 
-df %>%
-  mutate(.ci = seq_len(nrow(.)) - 1L) %>%
-  tidyr::pivot_longer(cols = !matches(".ri|.ci"), names_to = ".ri", values_to = "norm") %>%
-  arrange(.ci, .ri) %>%
-  mutate(.ri = as.integer(.ri)) %>%
-  relocate(norm) %>%
-  ctx$addNamespace() %>%
-  ctx$save()
+# perform vsn
+data[is.nan( data )] <- NA
+norm_data <- justvsn(data)
+
+# prepare the result for tercen
+output_df = data.frame(
+  norm = as.vector(norm_data),
+  .ci  = rep(0:(ncol(norm_data)-1), each=nrow(norm_data)),
+  .ri  = rep(seq.int(from=0,to=nrow(norm_data)-1), ncol(norm_data)))
+
+# save it to tercen
+output_df <- ctx$addNamespace(output_df )
+ctx$save(output_df )
