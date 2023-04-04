@@ -1,13 +1,18 @@
 {
   "kind": "OperatorUnitTest",
-  "name": "vsn_operator",
+  "name": "test",
   "namespace": "ds0",
-  "inputDataUri": "c03_simple.tsv",
-  "outputDataUri": ["table1.csv", "table2.csv", "table3.csv"],
-  "columns": ["Observation"],
+  "inputDataUri": "test_in.csv",
+  "outputDataUri": ["test_out_1.csv", "test_out_2.csv", "test_out_3.csv"],
+  "columns": [
+    "Observation"
+  ],
   "rows": ["Variable"],
   "colors": [],
   "labels": [],
-  "yAxis": "Measurement",
-  "xAxis": ""
+  "yAxis": "y_values",
+  "xAxis": "",
+  "generatedOn": "04/04/2023 03:13:24 PM 2023",
+  "version": "",
+  "absTol": 1e-05
 }
