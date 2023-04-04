@@ -7,7 +7,6 @@ suppressPackageStartupMessages({
 ctx = tercenCtx()
 
 df <- ctx$as.matrix(fill = NA) %>%
-  t() %>%
   justvsn() %>%
   as_tibble()
 
