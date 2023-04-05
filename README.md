@@ -21,9 +21,3 @@ The operator is the `justvsn` function from the VSN bioconductor package.
 
 #### References
 see the `vsn` R package for the documentation.
-
-
-##### See Also
-
-
-#### Examples
