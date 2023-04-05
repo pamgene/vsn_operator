@@ -13,7 +13,7 @@ Input projection|.
 
 Output relations|.
 ---|---
-`norm`| numeric, the normalized values of the measurements (i.e. of each sample)
+`norm`| numeric, the normalized values of the measurements (i.e. of each sample).
 
 ##### Details
 The operator is the `justvsn` function from the VSN bioconductor package.
